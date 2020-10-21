@@ -16,9 +16,9 @@
 if ! [[ -d $(pwd)/pdks/sky130A ]]; then exit -1; fi
 
 SIZE=$(du -B 1 $(pwd)/pdks/sky130A | cut -f 1 -d "   ")
-# 250MB = 262,144,000 bytes
-if [[ $SIZE -lt 262144000 ]]; then
-    echo 'size is less than 250MB'
+# 100MB = 104,857,600 bytes; a fair estimate of the size of one library, I guess.
+if [[ $SIZE -lt 104857600 ]]; then
+    echo 'size is less than 100MB'
     exit -1
 fi
 

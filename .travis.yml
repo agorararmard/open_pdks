@@ -40,4 +40,4 @@ install:
   - bash .travisCI/travisBuild.sh
 
 script:
-  - bash .travisCI/travisBuild.sh
+  - bash .travisCI/travisTest.sh

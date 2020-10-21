@@ -24,17 +24,17 @@ os:
 jobs:
   include:
     - name: "hd library"
-      env: TEST_SET=sky130_fd_sc_hd
+      env: STD_CELL_LIBRARY=sky130_fd_sc_hd
     - name: "hs library"
-      env: TEST_SET=sky130_fd_sc_hs
+      env: STD_CELL_LIBRARY=sky130_fd_sc_hs
     - name: "ms library"
-      env: TEST_SET=sky130_fd_sc_ms
+      env: STD_CELL_LIBRARY=sky130_fd_sc_ms
     - name: "ls library"
-      env: TEST_SET=sky130_fd_sc_ls
+      env: STD_CELL_LIBRARY=sky130_fd_sc_ls
     - name: "hdll library"
-      env: TEST_SET=sky130_fd_sc_hdll
+      env: STD_CELL_LIBRARY=sky130_fd_sc_hdll
     - name: "all libraries"
-      env: TEST_SET=all
+      env: STD_CELL_LIBRARY=all
 
 script:
   - bash .travisCI/travisBuild.sh

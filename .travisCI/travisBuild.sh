@@ -14,7 +14,7 @@
 mkdir pdks
 export OPEN_PDKS_ROOT=$(pwd)
 export PDK_ROOT=$(pwd)/pdks
-cd ./travisCI
+cd ./.travisCI
 sh ./build-docker.sh
 make skywater-pdk
 if [ $STD_CELL_LIBRARY == all ]; then 

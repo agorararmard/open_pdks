@@ -21,5 +21,6 @@ if [[ $SIZE -lt 104857600 ]]; then
     echo 'size is less than 100MB'
     exit -1
 fi
-
+echo 'Built without fatal errors'
+echo "sky130A size is $SIZE bytes"
 exit 0

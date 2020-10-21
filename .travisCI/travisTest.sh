@@ -1,3 +1,4 @@
+#!/bin/bash
 # Copyright 2020 Efabless Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,32 +13,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-language: minimal
-
-
-services:
-    - docker
-
-os:
-  - linux
-
-jobs:
-  include:
-    - name: "hd library"
-      env: STD_CELL_LIBRARY=sky130_fd_sc_hd
-    - name: "hs library"
-      env: STD_CELL_LIBRARY=sky130_fd_sc_hs
-    - name: "ms library"
-      env: STD_CELL_LIBRARY=sky130_fd_sc_ms
-    - name: "ls library"
-      env: STD_CELL_LIBRARY=sky130_fd_sc_ls
-    - name: "hdll library"
-      env: STD_CELL_LIBRARY=sky130_fd_sc_hdll
-    - name: "all libraries"
-      env: STD_CELL_LIBRARY=all
-
-install:
-  - bash .travisCI/travisBuild.sh
-
-script:
-  - bash .travisCI/travisBuild.sh
+if ! [[ -d $(pwd)/pdks/sky130A ]]; then exit -1; fi
+exit 0

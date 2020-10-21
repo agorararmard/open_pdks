@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# exit when any command fails
+set -e
+
 mkdir -p logs/docker
 echo "dir created"
 docker build --rm -t magic . | tee logs/docker/magic.build.txt

@@ -11,6 +11,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+# exit when any command fails
+set -e
+
 mkdir pdks
 export OPEN_PDKS_ROOT=$(pwd)
 export PDK_ROOT=$(pwd)/pdks
@@ -23,5 +27,5 @@ else
     make skywater-library;
 fi
 cd ..
-docker run -it -v $(pwd):/some_root -v $(pwd)/.travisCI:/build_root -v $OPEN_PDKS_ROOT:$OPEN_PDKS_ROOT -v $PDK_ROOT:$PDK_ROOT -e OPEN_PDKS_ROOT=$OPEN_PDKS_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) magic:latest  bash -c "cd /build-root && make build-pdk"
+docker run -it -v $(pwd):/some_root -v $(pwd)/.travisCI:/build_root -v $OPEN_PDKS_ROOT:$OPEN_PDKS_ROOT -v $PDK_ROOT:$PDK_ROOT -e OPEN_PDKS_ROOT=$OPEN_PDKS_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) magic:latest  bash -c "cd /build_root && make build-pdk"
 exit 0

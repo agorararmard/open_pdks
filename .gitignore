@@ -16,7 +16,8 @@ scripts/*
 !scripts/configure.ac
 **/Makefile
 **/Makefile.am
-
+# exception for travis Makefile
+!.travisCI/Makefile
 # staged PDKs
 sky130/sky130A
 sky130/sky130A/*

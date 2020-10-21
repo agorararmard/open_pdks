@@ -14,4 +14,12 @@
 # limitations under the License.
 
 if ! [[ -d $(pwd)/pdks/sky130A ]]; then exit -1; fi
+
+SIZE=$(du -B 1 $(pwd)/pdks/sky130A | cut -f 1 -d "   ")
+# 250MB = 262,144,000 bytes
+if [[ $SIZE -lt 262144000 ]]; then
+    echo 'size is less than 250MB'
+    exit -1
+fi
+
 exit 0
